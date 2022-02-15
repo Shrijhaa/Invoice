@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,500&display=swap');
+
+:root{
+    --color-dark-background:rgb(34, 32, 39);
+    --color-light-background:#000000;
+    --color-primary:rgb(129, 94, 218);
+    --color-box:rgb(40, 37, 48);
+    --color-navbar:rgba(8, 6, 6, 0.5);
+    --color-font:#f9fafb;
+    
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color:var(--color-dark-background);
+    font-family: 'Lora', serif;
+}
+.navbar{
+    background-color: var(--color-navbar);
+    height:100vh;
+    width:100px;
+    border-radius:0px 20px 20px 0px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    position: absolute;
+}
+.iconbox{
+    background-color: var(--color-primary);
+    height:100px;
+    width:100px;
+    border-radius:0px 20px 20px 0px;
+    display:grid;
+    place-items:center;
+}
+.outicon{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    background-color: white;
+ 
+    display:grid;
+    place-items:center;
+}
+.inicon{
+    height:20px;
+    width:20px;
+    border-radius:50%;
+    background-color: white;
+    border:5px solid var(--color-primary);
+}
+#icon{
+    color:white;
+    width:100px;
+    height:100px;
+}
+.bottomicon{
+    height:100px;
+    width:100%;
+    display:grid;
+    place-items:center;
+
+
+}
+.bicon{
+    color:white;
+   
+}
+
+.light-icon{
+ 
+}
+.dark-icon{
+display: none;
+}
+.invoicesbox{
+   height:600px;
+   width:70%;
+   max-width:768px;
+   min-width:648px;
+   background-color: rgba(59, 53, 53, 0.596);
+   margin:0px auto;
+   color:white;
+   display:flex;
+   justify-content:space-between;
+   padding:50px 0px;
+}
+.invoiceheadingcontainer{
+
+}
+.invoiceheading{
+font-family: 'Montserrat', sans-serif;
+}
+
+.invoicefilter {
+  
+} 
+
+.invoicesubheading{
+    
+}
+
+.invoicebutton{
+   height:40px;
+   background-color: var(--color-primary);
+   width:150px;
+   font-weight:500;
+   border-radius:150px;
+   display:flex;
+   align-items:center;
+   padding:10px;
+}
+.invoiceiconcontainer{
+    width:40px;
+    margin-right:10px;
+    height:40px;
+    border-radius:50%;
+    background-color: white;
+    display:grid;
+    place-items:center;
+}
+.invoiceicon{
+ color:var(--color-primary);
+}
