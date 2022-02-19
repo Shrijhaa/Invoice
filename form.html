@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <!-- <link rel="stylesheet" href="./css/index.css"> -->
     <link rel="stylesheet" href="./css/form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,78 +17,11 @@ https://kit.fontawesome.com/65cb64ed37.js
 
 </head>
 <body>
-   <div class="navbar">
-      <div class="iconbox">
-          <div class="outicon">
-            <div class="inicon">
-             
-            </div>
-          </div>
-          
-      </div>
-      <div class="bottomicon">
-        <span class="light-icon">
-        <i class="fa-solid fa-sun bicon"></i>
-        </span>
-        <span class="dark-icon">
-        <i class="fa-solid fa-moon bicon"></i>
-        </span>
-      </div>
-   </div>
-   <div class="invoicesbox">
-       <div class="invoiceheadingcontainer">
-           <h1 class="invoiceheading">Invoices</h1>
-           <p class="invoicesubheading">there are total 7 invoices</p>
-       </div>
-       <div class="invoicefilter">
-           <label for="invoicestatus">Filter by status</label>
-           <select id="invoicestatus">
-               
-                   <option value="filter"></option>
-                   <option value="paid">paid</option>
-                   <option value="pending">pending</option>
-                   <option value="draft">draft</option>
-              
-           </select>
-        </div>
-       <div onclick="addnewinvoice()" class="invoicebutton">
-        <div class="invoiceiconcontainer">
-            <i class="fa-solid fa-plus invoiceicon"></i>
-        </div>   
-        <p>New Invoice</p>
-       </div>
-   </div>
-   <div class="invoicelist" id="invoicelist">
-       <div class="invoicecard">
-           <p class="invoiceid"><span class="hash">#</span>RT300</p>
-           <p class="invoicedate">Due 19</p>
-           <p class="invoiceclient">Jeny</p>
-           <p class="invoiceprice">$1,800</p>
-           <p class="invoicestatus paid">Paid</p>
-           <span class="left-icon">
-               <i class="fa-solid fa-chevr"></i>
-           </span>
-       </div>
-       <div class="invoicecard">
-        <p class="invoiceid"><span class="hash">#</span>RT300</p>
-        <p class="invoicedate">Due 19</p>
-        <p class="invoiceclient">Jeny</p>
-        <p class="invoiceprice">$1,800</p>
-        <p class="invoicestatus pending">Pending</p>
-        <span class="left-icon">
-            <i class="fa-solid fa-chevron-right"></i>
-        </span>
-    </div>
-
-   </div>
-   <div class="invoiceform">
+<div class="invoiceform">
     <form id="billform">
         
         <table>
         <h3>Edit <span class="hash"></span>#XM2312</h3>
-       
-    
-
         <p>Bill From</p>
         <tr>
         <label for="address">street address</label>
@@ -222,19 +155,3 @@ https://kit.fontawesome.com/65cb64ed37.js
 </div>
 
    </div>
-   
-</body>
-<script>
-
-
-   
-    function addnewinvoice(){
-    let invcard= document.createElement('div');
-    invcard.className="invoicecard";
-    
-    invcard.innerHTML ='<p class="invoiceid"><span class="hash">#</span>RT300</p><p class="invoicedate">Due 19</p><p class="invoiceclient">Jeny</p><p class="invoiceprice">$2,600</p><p class="invoicestatus paid">paid</p><span class="left-icon"><i class="fa-solid fa-chevr"></i></span>';
-    document.getElementById('invoicelist').appendChild(invcard);
-    
-    }
-</script>
-</html>

@@ -17,7 +17,7 @@
 
 body{
     background-color:var(--color-dark-background);
-    font-family: 'Lora', serif;
+   font-family: 'Montserrat', sans-serif;
 }
 .navbar{
     background-color: var(--color-navbar);
@@ -82,7 +82,7 @@ display: none;
    width:70%;
    max-width:768px;
    min-width:648px;
-   background-color: rgba(59, 53, 53, 0.596);
+   background-color:var(--color-dark-background);
    margin:0px auto;
    color:white;
    display:flex;
@@ -90,18 +90,39 @@ display: none;
    padding:50px 0px;
 }
 .invoiceheadingcontainer{
-
+   
 }
 .invoiceheading{
 font-family: 'Montserrat', sans-serif;
 }
+.invoicefilter{
 
-.invoicefilter {
-  
+}
+
+.invoicefilter{
+  font-size:12px;
+  position:relative;
+  right:-100px;
+  margin-top:20px;
 } 
+select{
+    background-color:var(--color-dark-background);
+    color:white;
+    border:none;
 
-.invoicesubheading{
+}
+option{
+    font-size: 12px;
     
+    
+}
+option:hover
+ {
+     
+     background-color: blue;
+}
+.invoicesubheading{
+    font-size:12px;
 }
 
 .invoicebutton{
@@ -113,6 +134,7 @@ font-family: 'Montserrat', sans-serif;
    display:flex;
    align-items:center;
    padding:10px;
+   font-size:15px;
 }
 .invoiceiconcontainer{
     width:40px;
@@ -125,4 +147,47 @@ font-family: 'Montserrat', sans-serif;
 }
 .invoiceicon{
  color:var(--color-primary);
+}
+
+.invoicecard{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    color:white;
+    border-radius: 10px;
+    padding:25px 20px;
+    background-color: var(--color-navbar);
+}
+
+.invoiceid{
+    display: flex;
+    font-weight:600;
+}
+
+.hash{
+    color:var(--color-primary);
+}
+.invoicedate{
+    font-size: 14px;
+    color:gainsboro;
+}
+.invoiceprice{
+font-weight: 600;
+}
+
+.invoicestatus{
+    font-weight: 600;
+    font-size: 12px;
+    padding:10px 30px;
+    border-radius: 5px;
+}
+
+.paid{
+    background-color: rgb(36, 68, 36);
+}
+.pending{
+    background-color: rgb(210, 212, 60);
+}
+.draft{
+    background-color: rgb(104, 58, 179);
 }

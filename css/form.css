@@ -1,0 +1,15 @@
+form{
+    color:rgb(168, 165, 165);
+    background-color: rgb(15, 14, 19);
+}
+input{
+
+background-color: rgb(32, 29, 43);
+}
+form{
+    padding:50px;
+    
+}table{
+    padding:30px;
+    border:2px solid pink;
+}
