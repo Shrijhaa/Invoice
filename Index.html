@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="./css/form.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="
 https://kit.fontawesome.com/65cb64ed37.js
@@ -18,6 +21,7 @@ https://kit.fontawesome.com/65cb64ed37.js
     ></script>
   </head>
   <body>
+    <!-- Navigation -->
     <div class="navbar">
       <div class="iconbox">
         <div class="outicon">
@@ -33,154 +37,162 @@ https://kit.fontawesome.com/65cb64ed37.js
         </span>
       </div>
     </div>
-    <div class="invoicesbox">
-      <div class="invoiceheadingcontainer">
-        <h1 class="invoiceheading">Invoices</h1>
-        <p class="invoicesubheading">there are total 7 invoices</p>
+
+    <!-- Invoice List -->
+
+    <section>
+      <div class="invoicesbox">
+        <div class="invoiceheadingcontainer">
+          <h1 class="invoiceheading">Invoices</h1>
+          <p class="invoicesubheading">there are total 7 invoices</p>
+        </div>
+        <div class="invoicefilter">
+          <label for="invoicestatus">Filter by status</label>
+          <select id="invoicestatus">
+            <option value="paid">paid</option>
+            <option value="pending">pending</option>
+            <option value="draft">draft</option>
+          </select>
+        </div>
+        <div class="invoicebutton">
+          <div class="invoiceiconcontainer">
+            <i class="fa-solid fa-plus invoiceicon"></i>
+          </div>
+          <p>New Invoice</p>
+        </div>
       </div>
-      <div class="invoicefilter">
-        <label for="invoicestatus">Filter by status</label>
-        <select id="invoicestatus">
-          <option value="paid">paid</option>
-          <option value="pending">pending</option>
-          <option value="draft">draft</option>
-        </select>
+      <div class="invoicelist" id="invoicelist">
+        <div class="invoicecard">
+          <p class="invoiceid"><span class="hash">#</span>RT300</p>
+          <p class="invoicedate">Due 19</p>
+          <p class="invoiceclient">Jeny</p>
+          <p class="invoiceprice">$1,800</p>
+          <p class="invoicestatus paid">Paid</p>
+          <span class="left-icon">
+            <i class="fa-solid fa-chevron-right"></i>
+          </span>
+        </div>
+        <div class="invoicecard">
+          <p class="invoiceid"><span class="hash">#</span>RT300</p>
+          <p class="invoicedate">Due 19</p>
+          <p class="invoiceclient">Jeny</p>
+          <p class="invoiceprice">$1,800</p>
+          <p class="invoicestatus pending">Pending</p>
+          <span class="left-icon">
+            <i class="fa-solid fa-chevron-right"></i>
+          </span>
+        </div>
       </div>
-      <div onclick="addnewinvoice()" class="invoicebutton">
-        <div class="invoiceiconcontainer">
-          <i class="fa-solid fa-plus invoiceicon"></i>
-        </div>
-        <p>New Invoice</p>
+    </section>
+
+    <!-- Invoice Form -->
+
+    <section class="invoiceform">
+      <h2 class="formheading">Edit<span class="hash">#</span>XM9141</h2>
+      <p class="formsubheading">Bill Form</p>
+
+      <div class="question1">
+        <p class="question">Street Address</p>
+        <input type="text" id="fromaddress" class="input1 answer" />
       </div>
-    </div>
-    <div class="invoicelist" id="invoicelist">
-      <div class="invoicecard">
-        <p class="invoiceid"><span class="hash">#</span>RT300</p>
-        <p class="invoicedate">Due 19</p>
-        <p class="invoiceclient">Jeny</p>
-        <p class="invoiceprice">$1,800</p>
-        <p class="invoicestatus paid">Paid</p>
-        <span class="left-icon">
-          <i class="fa-solid fa-chevron-right"></i>
-        </span>
+
+      <div class="question3">
+        <div>
+          <p class="question">City</p>
+          <input class="answer input3" type="text" id="fromcity" />
+        </div>
+        <div>
+          <p class="question">Pin Code</p>
+          <input class="answer input3" type="text" id="frompincode" />
+        </div>
+        <div>
+          <p class="question">Country</p>
+          <input class="answer input3" type="text" id="fromcountry" />
+        </div>
       </div>
-      <div class="invoicecard">
-        <p class="invoiceid"><span class="hash">#</span>RT300</p>
-        <p class="invoicedate">Due 19</p>
-        <p class="invoiceclient">Jeny</p>
-        <p class="invoiceprice">$1,800</p>
-        <p class="invoicestatus pending">Pending</p>
-        <span class="left-icon">
-          <i class="fa-solid fa-chevron-right"></i>
-        </span>
+      <p class="formsubheading">Bill To</p>
+      <div class="question1">
+        <p class="question">Client Name</p>
+        <input type="text" id="clientname" class="input1 answer" />
       </div>
-    </div>
-
-    <div class="invoiceform">
-      <form id="newinvoiceform">
-        <h2 class="formheading">Edit<span class="hash">#</span>XM9141</h2>
-        <p class="formsubheading">Bill Form</p>
-
-        <div class="question1">
-          <p class="question">Street Address</p>
-          <input type="text" id="fromaddress" class="input1 answer" />
+      <div class="question1">
+        <p class="question">Client mail</p>
+        <input type="mail" id="clientmail" class="input1 answer" />
+      </div>
+      <div class="question1">
+        <p class="question">Street Address</p>
+        <input type="text" id="toaddress" class="input1 answer" />
+      </div>
+      <div class="question3">
+        <div>
+          <p class="question">City</p>
+          <input class="answer input3" type="text" id="tocity" />
+        </div>
+        <div>
+          <p class="question">Pin Code</p>
+          <input class="answer input3" type="text" id="topincode" />
+        </div>
+        <div>
+          <p class="question">Country</p>
+          <input class="answer input3" type="text" id="tocountry" />
+        </div>
+      </div>
+      <div class="question2">
+        <div>
+          <p class="question">Invoice Date</p>
+          <input class="answer input2" type="date" id="invoicedate" />
+        </div>
+        <div>
+          <p class="question">Payment Terms</p>
+          <select class="answer input2" id="paymentTerms">
+            <option value="30days">Net 30 days</option>
+            <option value="10days">Net 10 days</option>
+            <option value="3days">Net 3 days</option>
+          </select>
+        </div>
+      </div>
+      <div class="question1">
+        <p class="question">Project Description</p>
+        <input type="text" id="description" class="input1 answer" />
+      </div>
+      <br />
+      <h3>Item list</h3>
+      <div class="additem">
+        <div class="additemcardheader">
+          <div class="head1"><p>Item name</p></div>
+          <div class="head2"><p>Qty.</p></div>
+          <div class="head3"><p>Price</p></div>
+          <div class="head4"><p>Total</p></div>
+          <div class="head5"><p></p></div>
         </div>
 
-        <div class="question3">
-          <div>
-            <p class="question">City</p>
-            <input class="answer input3" type="text" id="fromcity" />
-          </div>
-          <div>
-            <p class="question">Pin Code</p>
-            <input class="answer input3" type="text" id="frompincode" />
-          </div>
-          <div>
-            <p class="question">Country</p>
-            <input class="answer input3" type="text" id="fromcountry" />
+        <div class="additemcard">
+          <div class="val1 head1"><input type="text" id="itemName" /></div>
+          <div class="val2 head2"><input type="text" id="quality" /></div>
+          <div class="val3 head3"><input type="text" id="price" /></div>
+          <div class="val4 head4"><p id="total">156.40</p></div>
+          <div class="val5 head5">
+            <span class="trashicon">
+              <i class="fa-solid fa-trash"></i>
+            </span>
           </div>
         </div>
-        <p class="formsubheading">Bill To</p>
-        <div class="question1">
-          <p class="question">Client Name</p>
-          <input type="text" id="clientname" class="input1 answer" />
-        </div>
-        <div class="question1">
-          <p class="question">Client mail</p>
-          <input type="mail" id="clientmail" class="input1 answer" />
-        </div>
-        <div class="question1">
-          <p class="question">Street Address</p>
-          <input type="text" id="toaddress" class="input1 answer" />
-        </div>
-        <div class="question3">
-          <div>
-            <p class="question">City</p>
-            <input class="answer input3" type="text" id="tocity" />
-          </div>
-          <div>
-            <p class="question">Pin Code</p>
-            <input class="answer input3" type="text" id="topincode" />
-          </div>
-          <div>
-            <p class="question">Country</p>
-            <input class="answer input3" type="text" id="tocountry" />
-          </div>
-        </div>
-        <div class="question2">
-          <div>
-            <p class="question">Invoice Date</p>
-            <input class="answer input2" type="date" id="invoicedate" />
-          </div>
-          <div>
-            <p class="question">Payment Terms</p>
-            <select class="answer input2" id="payment terms">
-              <option value="30days">Net 30 days</option>
-              <option value="10days">Net 10 days</option>
-              <option value="3days">Net 3 days</option>
-            </select>
-          </div>
-        </div>
-        <div class="question1">
-          <p class="question">Project Description</p>
-          <input type="text" id="description" class="input1 answer" />
-        </div>
-        <br />
-        <h3>Item list</h3>
-        <div class="additem">
 
-          <div class="additemcardheader">
-            <div class="head1"><p>Item name</p></div>
-            <div class="head2"><p>Qty.</p></div>
-            <div class="head3"><p>Price</p></div>
-            <div class="head4"><p>Total</p></div>
-            <div class="head5"><p></p></div>
-          </div>
-
-         
-            <div class="additemcard">
-              <div class="val1 head1"><input type="text" id="itemname1"></div>
-              <div class="val2 head2"><input type="text" id="itemname1"></div>
-              <div class="val3 head3"><input type="text" id="itemname1"></div>
-              <div class="val4 head4"><p>156.40</p></div>
-              <div class="val5 head5">
-                <span class="trashicon">
-                <i class="fa-solid fa-trash"></i>
-                </span>
-              </div>
-            </div>
-
-            <button id="additembutton" onclick="addnewitemcard()" type="submit"> + Add New Item </button>
+        <button id="additembutton" onclick="addnewitemcard()" type="submit">
+          + Add New Item
+        </button>
         <div class="formbuttons">
-          <div><button id="cancel" onclick="cancel()" type="submit">Cancel</button></div>
-         <div><button id="save" onclick="save()" type="submit">Save Changes</button></div>
+          <div>
+            <button id="cancel" onclick="cancel()" type="submit">Cancel</button>
+          </div>
+          <div>
+            <button id="save" onclick="save()" type="submit">
+              Save Changes
+            </button>
+          </div>
         </div>
-
-        
-        </div>
-        
+      </div>
+    </section>
+    <script type="text/javascript" src="./js/index.js"></script>
   </body>
-  <script>
-   
-  </script>
 </html>
