@@ -1,15 +1,194 @@
-form{
-    color:rgb(168, 165, 165);
-    background-color: rgb(15, 14, 19);
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
 }
-input{
 
-background-color: rgb(32, 29, 43);
+.invoiceform{
+    width:600px;
+    border:1px solid white;
+    position:absolute;
+    color:white;
+    top:0px;
+    left:75px;
+    background-color: black;
+    font-size:14px;
 }
-form{
-    padding:50px;
+
+#newinvoiceform{
+    padding-left:50px;
+    padding-right:50px;
     
-}table{
-    padding:30px;
-    border:2px solid pink;
+}
+.formheading{
+    margin:40px 0px;
+}
+.formsubheading{
+    margin-bottom:20px;
+    margin-top:30px;
+    color:var(--color-primary);
+    font-weight: bold;
+}
+.question{
+    margin: 5px 0px;
+}
+.answer{
+    height:40px;
+    background-color: rgba(88, 82, 82, 0.452);
+    border:none;
+    color:white;
+  padding:0px 25px;
+    border-radius:3px;
+    margin-bottom:15px;
+}
+
+.question1{
+    width:100%;
+}
+.question1 input{
+    width:100%;
+}
+.question3{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    
+}
+
+.input3{
+    width:150px;
+    
+}
+
+
+.question2{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    
+}
+.question2 div{
+   margin-right:30px;
+}
+.input2{
+width:235px;
+
+}
+.additem{
+    width:100%;
+    margin:20px 0px;
+    
+}
+.additemcardheader{
+    display:flex;
+    justify-content: space-between;
+    font-weight:600;
+     width:100%;
+     height:45px;
+     margin-bottom:10px;
+    
+}
+
+.additemcardheader div{
+   
+    padding:10px 0px;
+}
+.head1{
+    width:180px;
+}
+.head2{
+    width:40px;
+}
+.head3{
+    width:80px;
+}
+.head4{
+    width:80px;
+}
+.head5{
+    width:30px;
+}
+
+
+.additemcard{
+    display:flex;
+    justify-content: space-between;
+    font-weight:600;
+     width:100%;
+     height:45px;
+     margin-bottom:15px;
+}
+
+.additemcard div{
+   
+    padding:15px 12px;
+    color:white;
+    border-radius:3px;
+    height:100%;
+    padding:10px;
+}
+
+.additemcard .val1,.val2,.val3
+{
+    background-color: rgba(88, 82, 82, 0.452);
+    text-align: center;
+}
+.additemcard .val4,.val5
+{
+    
+    text-align: center;
+}
+.additemcard div input{
+    border:none;
+   height:100%;
+   width:100%;
+   background: transparent;
+   color:white;
+  
+}
+
+.trashicon{
+    height:25px;
+    width:25px;
+    color:white;
+}
+
+
+#additembutton{
+    height:50px;
+    width:100%;
+    border-radius: 35px;
+    border:none;
+    background-color: rgba(88, 82, 82, 0.452);
+    color:white;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom:30px;
+}
+.formbuttons{
+    display:flex;
+   float:right;
+    
+}
+.formbuttons div{
+    margin:20px 10px;
+}
+.formbuttons div button{
+    height:50px;
+    border-radius: 30px;
+    border:none;
+    
+    color:white;
+    font-weight: 600;
+    font-size: 14px;
+   
+}
+#save{
+    
+    width:150px;
+    background-color: var(--color-primary);
+}
+#cancel{
+    width:100px;
+    background-color: rgba(88, 82, 82, 0.452);
 }

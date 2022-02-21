@@ -1,240 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice</title>
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/form.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
-<script src="
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="
 https://kit.fontawesome.com/65cb64ed37.js
-" crossorigin="anonymous">
-</script> 
-
-</head>
-<body>
-   <div class="navbar">
+"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="navbar">
       <div class="iconbox">
-          <div class="outicon">
-            <div class="inicon">
-             
-            </div>
-          </div>
-          
+        <div class="outicon">
+          <div class="inicon"></div>
+        </div>
       </div>
       <div class="bottomicon">
         <span class="light-icon">
-        <i class="fa-solid fa-sun bicon"></i>
+          <i class="fa-solid fa-sun bicon"></i>
         </span>
         <span class="dark-icon">
-        <i class="fa-solid fa-moon bicon"></i>
+          <i class="fa-solid fa-moon bicon"></i>
         </span>
       </div>
-   </div>
-   <div class="invoicesbox">
-       <div class="invoiceheadingcontainer">
-           <h1 class="invoiceheading">Invoices</h1>
-           <p class="invoicesubheading">there are total 7 invoices</p>
-       </div>
-       <div class="invoicefilter">
-           <label for="invoicestatus">Filter by status</label>
-           <select id="invoicestatus">
-               
-                   <option value="filter"></option>
-                   <option value="paid">paid</option>
-                   <option value="pending">pending</option>
-                   <option value="draft">draft</option>
-              
-           </select>
-        </div>
-       <div onclick="addnewinvoice()" class="invoicebutton">
+    </div>
+    <div class="invoicesbox">
+      <div class="invoiceheadingcontainer">
+        <h1 class="invoiceheading">Invoices</h1>
+        <p class="invoicesubheading">there are total 7 invoices</p>
+      </div>
+      <div class="invoicefilter">
+        <label for="invoicestatus">Filter by status</label>
+        <select id="invoicestatus">
+          <option value="filter"></option>
+          <option value="paid">paid</option>
+          <option value="pending">pending</option>
+          <option value="draft">draft</option>
+        </select>
+      </div>
+      <div onclick="addnewinvoice()" class="invoicebutton">
         <div class="invoiceiconcontainer">
-            <i class="fa-solid fa-plus invoiceicon"></i>
-        </div>   
+          <i class="fa-solid fa-plus invoiceicon"></i>
+        </div>
         <p>New Invoice</p>
-       </div>
-   </div>
-   <div class="invoicelist" id="invoicelist">
-       <div class="invoicecard">
-           <p class="invoiceid"><span class="hash">#</span>RT300</p>
-           <p class="invoicedate">Due 19</p>
-           <p class="invoiceclient">Jeny</p>
-           <p class="invoiceprice">$1,800</p>
-           <p class="invoicestatus paid">Paid</p>
-           <span class="left-icon">
-               <i class="fa-solid fa-chevr"></i>
-           </span>
-       </div>
-       <div class="invoicecard">
+      </div>
+    </div>
+    <div class="invoicelist" id="invoicelist">
+      <div class="invoicecard">
+        <p class="invoiceid"><span class="hash">#</span>RT300</p>
+        <p class="invoicedate">Due 19</p>
+        <p class="invoiceclient">Jeny</p>
+        <p class="invoiceprice">$1,800</p>
+        <p class="invoicestatus paid">Paid</p>
+        <span class="left-icon">
+          <i class="fa-solid fa-chevron-right"></i>
+        </span>
+      </div>
+      <div class="invoicecard">
         <p class="invoiceid"><span class="hash">#</span>RT300</p>
         <p class="invoicedate">Due 19</p>
         <p class="invoiceclient">Jeny</p>
         <p class="invoiceprice">$1,800</p>
         <p class="invoicestatus pending">Pending</p>
         <span class="left-icon">
-            <i class="fa-solid fa-chevron-right"></i>
+          <i class="fa-solid fa-chevron-right"></i>
         </span>
+      </div>
     </div>
 
-   </div>
-   <div class="invoiceform">
-    <form id="billform">
-        
-        <table>
-        <h3>Edit <span class="hash"></span>#XM2312</h3>
-       
-    
+    <div class="invoiceform">
+      <form id="newinvoiceform">
+        <h2 class="formheading">Edit<span class="hash">#</span>XM9141</h2>
+        <p class="formsubheading">Bill Form</p>
 
-        <p>Bill From</p>
-        <tr>
-        <label for="address">street address</label>
-        <br>
-        <input type="text" id="address" name="address">
-        </tr>
-        
-        <tr>
-        <td>
-        <label for="city">city</label>
-         <br>
-         <input type="text" id="city" name="city">
-         </td>
-         <td>
-            <label for="pin">post code</label>
-            <br>
-            <input type="text" id="pin" name="pin">
-         </td>
-         <td>
-            <label for="country">country</label>
-             <br>
-             <input type="text" id="country" name="country">
-         </td>
-        </tr>
+        <div class="question1">
+          <p class="question">Street Address</p>
+          <input type="text" id="fromaddress" class="input1 answer" />
+        </div>
 
-        <p>Bill To</p>
+        <div class="question3">
+          <div>
+            <p class="question">City</p>
+            <input class="answer input3" type="text" id="fromcity" />
+          </div>
+          <div>
+            <p class="question">Pin Code</p>
+            <input class="answer input3" type="text" id="frompincode" />
+          </div>
+          <div>
+            <p class="question">Country</p>
+            <input class="answer input3" type="text" id="fromcountry" />
+          </div>
+        </div>
+        <p class="formsubheading">Bill To</p>
+        <div class="question1">
+          <p class="question">Client Name</p>
+          <input type="text" id="clientname" class="input1 answer" />
+        </div>
+        <div class="question1">
+          <p class="question">Client mail</p>
+          <input type="mail" id="clientmail" class="input1 answer" />
+        </div>
+        <div class="question1">
+          <p class="question">Street Address</p>
+          <input type="text" id="toaddress" class="input1 answer" />
+        </div>
+        <div class="question3">
+          <div>
+            <p class="question">City</p>
+            <input class="answer input3" type="text" id="tocity" />
+          </div>
+          <div>
+            <p class="question">Pin Code</p>
+            <input class="answer input3" type="text" id="topincode" />
+          </div>
+          <div>
+            <p class="question">Country</p>
+            <input class="answer input3" type="text" id="tocountry" />
+          </div>
+        </div>
+        <div class="question2">
+          <div>
+            <p class="question">Invoice Date</p>
+            <input class="answer input2" type="date" id="invoicedate" />
+          </div>
+          <div>
+            <p class="question">Payment Terms</p>
+            <select class="answer input2" id="payment terms">
+              <option value="30days">Net 30 days</option>
+              <option value="10days">Net 10 days</option>
+              <option value="3days">Net 3 days</option>
+            </select>
+          </div>
+        </div>
+        <div class="question1">
+          <p class="question">Project Description</p>
+          <input type="text" id="description" class="input1 answer" />
+        </div>
+        <br />
+        <h3>Item list</h3>
+        <div class="additem">
 
-        <tr>
-        <label for="name">client's name</label>
-        <br>
-        <input type="text" id="name" name="name">
-        </tr>
-
-        <tr>
-        <label for="mail">client's mail</label>
-        <br>
-        <input type="text" id="mail" name="mail">
-        </tr>
-
-        <tr>
-        <label for="clientaddress">street address</label>
-        <br>
-        <input type="text" id="clientaddress" name="clientaddress">
-        </tr>
-
-
-        <tr> 
-        <td><label for="clientcity">city</label><br><input type="text" id="clientcity" name="clientcity"></td>
-        <td><label for="clientpin">post</label><br><input type="text" id="clientpin" name="clientpin"></td>
-        <td><label for="clientcountry">country</label><br><input type="text" id="clientcountry" name="clientcountry"></td>
-        </tr>
-       
-        <tr>
-
-            <td>
-                <label for="date">invoice date</label>
-                <br>
-                <input type="date" id="date" name="date">
-            </td>
-            <td>
-                <label for="terms">payment terms</label>
-                <br>
-                <select name="paymentterms" id="paymentterms">
-                    <option value="next30days">next 30 days</option>
-                    <option value="next10days">next 10 days</option>
-                    <option value="next3days">next 3 days</option>
-                </select>
-            </td>
-
-        </tr>
-        
-        <tr>
-        <label for="description">project description</label>
-        <br>
-        <input type="text" id="description" name="description">
-        </tr>
-      
-       <h3>Item list</h3>
-    
-           <tr>
-               <th>
-                   item name
-               </th>
-               <th>
-                Qty.
-            </th>
-            <th>
-               Price
-            </th>
-            <th>
-                Total
-            </th>
-            <th>
-                delete
-            </th>
-           </tr>
-           <tr>
-               <td>
-                   <input type="text" id="item1" name="item1">
-               </td>
-               <td>
-                <input type="number" id="qty1" name="qty1">
-                </td>
-                <td>
-                <input type="number" id="price1" name="price1">
-                </td>
-                <td>
-                    <p id="total1" name="total1">156.00</p>
-                </td>
-                <td>
-                    <span class="trashicon">
-                        <i class="fa-solid fa-trash"></i>
-                    </span>
-                </td>
-           </tr>
-           
+          <div class="additemcardheader">
+            <div class="head1"><p>Item name</p></div>
+            <div class="head2"><p>Qty.</p></div>
+            <div class="head3"><p>Price</p></div>
+            <div class="head4"><p>Total</p></div>
+            <div class="head5"><p></p></div>
+          </div>
 
          
-       </table>
-       
+            <div class="additemcard">
+              <div class="val1 head1"><input type="text" id="itemname1"></div>
+              <div class="val2 head2"><input type="text" id="itemname1"></div>
+              <div class="val3 head3"><input type="text" id="itemname1"></div>
+              <div class="val4 head4"><p>156.40</p></div>
+              <div class="val5 head5">
+                <span class="trashicon">
+                <i class="fa-solid fa-trash"></i>
+                </span>
+              </div>
+            </div>
+
+            <button id="additembutton" onclick="addnewitemcard()" type="submit"> + Add New Item </button>
+        <div class="formbuttons">
+          <div><button id="cancel" onclick="cancel()" type="submit">Cancel</button></div>
+         <div><button id="save" onclick="save()" type="submit">Save Changes</button></div>
+        </div>
+
         
-       <button id="addnewitem" class="addnewitem" onclick="addnewitem()">+ Add new Item</button>
-        <button type="sumbit" id="cancel" class="cancel" onclick="cancelform()">Cancel</button>
-        <button type="sumbit" id="save" class="save" onclick="addnewinvoice()">Save Changes</button>    
+        </div>
         
-
-
-
-        
-    </form>
-</div>
-
-   </div>
+  </body>
+  <script>
    
-</body>
-<script>
-
-
-   
-    function addnewinvoice(){
-    let invcard= document.createElement('div');
-    invcard.className="invoicecard";
-    
-    invcard.innerHTML ='<p class="invoiceid"><span class="hash">#</span>RT300</p><p class="invoicedate">Due 19</p><p class="invoiceclient">Jeny</p><p class="invoiceprice">$2,600</p><p class="invoicestatus paid">paid</p><span class="left-icon"><i class="fa-solid fa-chevr"></i></span>';
-    document.getElementById('invoicelist').appendChild(invcard);
-    
-    }
-</script>
+  </script>
 </html>
