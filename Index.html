@@ -7,6 +7,8 @@
     <title>Invoice</title>
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./css/invoice.css" />
+   
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet" />
@@ -47,7 +49,7 @@ https://kit.fontawesome.com/65cb64ed37.js
           <option value="draft">draft</option>
         </select>
       </div>
-      <div onclick="addnewinvoice()" class="invoicebutton">
+      <div class="invoicebutton">
         <div class="invoiceiconcontainer">
           <i class="fa-solid fa-plus invoiceicon"></i>
         </div>
@@ -149,7 +151,6 @@ https://kit.fontawesome.com/65cb64ed37.js
         <br />
         <h3>Item list</h3>
         <div class="additem">
-
           <div class="additemcardheader">
             <div class="head1"><p>Item name</p></div>
             <div class="head2"><p>Qty.</p></div>
@@ -157,31 +158,116 @@ https://kit.fontawesome.com/65cb64ed37.js
             <div class="head4"><p>Total</p></div>
             <div class="head5"><p></p></div>
           </div>
-
-         
-            <div class="additemcard">
-              <div class="val1 head1"><input type="text" id="itemname1"></div>
-              <div class="val2 head2"><input type="text" id="itemname1"></div>
-              <div class="val3 head3"><input type="text" id="itemname1"></div>
-              <div class="val4 head4"><p>156.40</p></div>
+           <div class="additemcard">
+              <div class="val1 head1"><input type="text" id="itemname"></div>
+              <div class="val2 head2"><input type="text" id="qty"></div>
+              <div class="val3 head3"><input type="text" id="price"></div>
+              <div class="val4 head4"><p id="total">156.40</p></div>
               <div class="val5 head5">
                 <span class="trashicon">
                 <i class="fa-solid fa-trash"></i>
                 </span>
               </div>
             </div>
-
             <button id="additembutton" onclick="addnewitemcard()" type="submit"> + Add New Item </button>
-        <div class="formbuttons">
+            <div class="formbuttons">
           <div><button id="cancel" onclick="cancel()" type="submit">Cancel</button></div>
          <div><button id="save" onclick="save()" type="submit">Save Changes</button></div>
         </div>
+      </div>
+</form>
+</div>
+    <div class="invoicedetails">
+          <div class="navback">
+            <span><i class="fa-solid fa-chevron-left"></i></span>
+            <p>Go back</p>
+          </div>
+          <div class="statusbox">
+            <div class="statusboxleft">
+              <p>Status</p>
+              <p class="invoicestatus pending">Pending</p>
 
-        
+            </div>
+            <div class="statusboxright">
+              <button id="edit" type="submit">Edit</button>
+              <button id="delete" type="submit">Delete</button>
+              <button id="markpaid" type="submit">Mark as Paid</button>
+            </div>
+
+          </div>
+
+          <div class="invoicedata">
+            <div class="invoicedata2split">
+            <div class="invoicedataleft">
+                <h2><span>#</span>XM9141</h2>
+                <p>Graphic Design</p>
+            </div>
+            <div class="invoicedataright">
+              <p>19 Union Terrace</p>
+              <p>London</p>
+              <p>E1 3EZ</p>
+              <p>United Kingdom</p>
+            </div>
+          </div>
+          <div class="invoicedata3split">
+           <div class="split1">
+             <div class="split1up">
+               <p>Invoice Date</p>
+               <h3>21 Aug 2021</h3>
+             </div>
+             <div class="split1down">
+              <p>Payment Due</p>
+              <h3>21 Aug 2021</h3>
+             </div>
+           </div>
+           <div class="split2">
+             <p>Bill To</p>
+             <h3>Alex Grim</h3>
+             <p>64 Church Way</p>
+             <p>BredFord</p>
+             <p>BOI 9PS</p>
+             <p>United Kingdom</p>
+          </div>
+          <div class="split3">
+             <p>Sent to</p>
+             <h3>alexgrim@gmail.com</h3>
+          </div>
+          </div>
+
+          <div class="invoicetable">
+            <table>
+              <tr>
+                <th class="leftside">Item name</th>
+                <th>Qty.</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+              <tr>
+                <td>Banner design</td>
+                <td class="centerize">1</td>
+                <td>$156.00</td>
+                <td>$156.00</td>
+              </tr>
+              <tr>
+                <td>Email design</td>
+                <td class="centerize">2</td>
+                <td>$200.00</td>
+                <td>$200.00</td>
+              </tr>
+            </table>
+            
+          </div>
+          <div class="invoicetotal">
+            <p>Amount due</p>
+            <h1>$556.00</h1>
+          </div>
         </div>
-        
+
+        <br>
+        <br>
+        <script type="text/javascript" src="./js/index.js">
+
+        </script>
   </body>
-  <script>
-   
-  </script>
+  
 </html>
