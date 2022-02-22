@@ -1,56 +1,50 @@
 const newInvoiceButton = document.getElementsByClassName("invoicebutton")[0];
-onst invoiceForm = document.getElementsByClassName("invoiceform")[0];
+const invoiceForm = document.getElementsByClassName("invoiceform")[0];
 
+// form input
+const fromaddress = document.getElementById("fromaddress");
+const fromcity = document.getElementById("fromcity");
+const frompincode = document.getElementById("frompincode");
+const fromcountry = document.getElementById("fromcountry");
+const clientname = document.getElementById("clientname");
+const clientmail = document.getElementById("clientmail");
+const toaddress = document.getElementById("toaddress");
+const tocity = document.getElementById("tocity");
+const topincode = document.getElementById("topincode");
+const tocountry = document.getElementById("tocountry");
+const invoicedate = document.getElementById("invoicedate");
+const paymentTerms = document.getElementById("paymentTerms");
+const description = document.getElementById("description");
+const itemName = document.getElementById("itemName");
+const quality = document.getElementById("quality");
+const price = document.getElementById("price");
+const total = document.getElementById("total");
 
-
-//form var
-
-
-var fromaddress= document.getElementById("fromaddress");
-var fromcity= document.getElementById("fromcity");
-var fromcountry= document.getElementById("fromcountry");
-var frompincode= document.getElementById("frompincode");
-var clientname= document.getElementById("clientname");
-var clientmail= document.getElementById("clientmail");
-var toaddress= document.getElementById("toaddress");
-var tocity= document.getElementById("tocity");
-var tocountry= document.getElementById("tocountry");
-var topincode= document.getElementById("topincode");
-var invoicedate= document.getElementById("invoicedate");
-var paymentterms= document.getElementById("paymentterms");
-var description= document.getElementById("description");
-var itemname= document.getElementById("itemname");
-var qty= document.getElementById("qty");
-var price= document.getElementById("price");
-var total= document.getElementById("total");
-
-
-
+// application state
 let toggleForm = false;
-let formInput={
-    fromaddress: "",
-    fromcity: "",
-    fromcountry: "",
-    frompincode: "",
-    clientmail: "",
-    clientname: "",
-    toaddress: "",
-    
-}
+let formInput = {
+  fromaddress: "",
+  fromcity: "",
+  frompincode: "",
+  fromcountry: "",
+  clientname: "",
+  clientmail: "",
+  toaddress: "",
+  tocity: "",
+  topincode: "",
+  tocountry: "",
+  invoicedate: new Date(),
+  paymentTerms: "Net 30 days",
+  description: "",
+  itemList: [],
+};
 
+const formStateChange = () => {
+  invoiceForm.style.display = toggleForm ? "block" : "none";
+};
 
-
-
-
-
-
-const formStateChange = () =>{
-    invoiceForm.style.display=toggleForm ? "block" : "none";
-}
-
-newInvoiceButton.addEventListener("click",() =>
-{
-    toggleForm=true;
-    formStateChange();
-
+// Event listeners
+newInvoiceButton.addEventListener("click", () => {
+  toggleForm = !toggleForm;
+  formStateChange();
 });

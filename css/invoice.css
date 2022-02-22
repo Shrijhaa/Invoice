@@ -1,6 +1,4 @@
-.invoiceform,.invoicesbox,.invoicelist{
-    display:none;
-}
+
 
 .invoicedetails{
     background-color: var(--color-dark-background);
