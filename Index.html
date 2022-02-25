@@ -80,7 +80,7 @@ https://kit.fontawesome.com/65cb64ed37.js
     </div>
 
     <div class="invoiceform">
-      <form id="newinvoiceform">
+      <div id="newinvoiceform">
         <h2 class="formheading">Edit<span class="hash">#</span>XM9141</h2>
         <p class="formsubheading">Bill Form</p>
 
@@ -158,24 +158,22 @@ https://kit.fontawesome.com/65cb64ed37.js
             <div class="head4"><p>Total</p></div>
             <div class="head5"><p></p></div>
           </div>
+          <div class="addedItems">
+
+          </div>
            <div class="additemcard">
               <div class="val1 head1"><input type="text" id="itemname"></div>
-              <div class="val2 head2"><input type="text" id="qty"></div>
-              <div class="val3 head3"><input type="text" id="price"></div>
-              <div class="val4 head4"><p id="total">156.40</p></div>
-              <div class="val5 head5">
-                <span class="trashicon">
-                <i class="fa-solid fa-trash"></i>
-                </span>
-              </div>
+              <div class="val2 head2"><input type="number" id="qty"></div>
+              <div class="val3 head3"><input type="number" id="price"></div>
+              <div class="val4 head4"><p id="total"></p></div>
             </div>
-            <button id="additembutton" onclick="addnewitemcard()" type="submit"> + Add New Item </button>
+            <button id="additembutton"> + Add New Item </button>
             <div class="formbuttons">
-          <div><button id="cancel" onclick="cancel()" type="submit">Cancel</button></div>
-         <div><button id="save" onclick="save()" type="submit">Save Changes</button></div>
+          <div><button id="cancel">Cancel</button></div>
+         <div><button id="save">Save Changes</button></div>
         </div>
         </div>
-</form>
+</fo>
 </div>
     <div class="invoicedetails">
           <div class="navback">

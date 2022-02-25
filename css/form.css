@@ -9,6 +9,7 @@
     position: absolute;
     color: white;
     top: 0px;
+    display: none;
     left: 75px;
     background-color: black;
     font-size: 14px;
@@ -125,7 +126,7 @@
 }
 
 
-.additemcard {
+.additemcard, .addeditemcard {
     display: flex;
     justify-content: space-between;
     font-weight: 600;
@@ -165,7 +166,7 @@
 .trashicon {
     height: 25px;
     width: 25px;
-    color: white;
+    color: rgb(189, 87, 87);
 }
 
 
