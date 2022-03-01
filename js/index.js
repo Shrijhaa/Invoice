@@ -3,7 +3,6 @@ const invoiceForm = document.getElementsByClassName("invoiceform")[0];
 
 // form input
 const fromaddress = document.getElementById("fromaddress");
-
 const fromcity = document.getElementById("fromcity");
 const frompincode = document.getElementById("frompincode");
 const fromcountry = document.getElementById("fromcountry");
@@ -16,8 +15,8 @@ const tocountry = document.getElementById("tocountry");
 const invoicedate = document.getElementById("invoicedate");
 const paymentTerms = document.getElementById("paymentterms");
 const description = document.getElementById("description");
-const itemName = document.getElementById("itemname");
-const quality = document.getElementById("qty");
+const itemname = document.getElementById("itemname");
+const qty = document.getElementById("qty");
 const price = document.getElementById("price");
 const total = document.getElementById("total");
 
@@ -26,9 +25,14 @@ const saveForm = document.getElementById("save");
 const addNewItemForm = document.getElementById("additembutton");
 
 const addedItemsArr = document.getElementsByClassName("addedItems")[0];
+/***********/
+
+
 
 let val;
+console.log(invoicelist);
 // application state
+
 let toggleForm = false;
 let formInput = {
   fromaddress: "",
@@ -45,11 +49,13 @@ let formInput = {
   paymentTerms: "Net 30 days",
   description: "",
   itemList: [],
-};
-
-/**
+  /**
  * [{itemname: string, qty:number, price:number, total:number}]
  */
+};
+
+
+
 
 const UpdateFormState = () => {
   fromaddress.value = formInput.fromaddress;
@@ -65,11 +71,14 @@ const UpdateFormState = () => {
   paymentTerms.value = formInput.paymentTerms;
   description.value = formInput.description;
   total.textContent = 0;
-  quality.value = 0;
+  qty.value = 0;
   price.value = 0;
 
-  for (let itemValue of formInput.itemList) {
+  // for (let itemValue of formInput.itemList) {
     // create addedItemCard element
+    var itemValue= formInput.itemList[0];
+    console.log("hi "+itemValue.itemname+itemValue.qty+itemValue.price+itemValue.total);
+    //console.log("itemlist "+itemValue.itemname);
     const addedItemCard = document.createElement("div");
     const addedItemName = document.createElement("p");
     const addedItemQty = document.createElement("p");
@@ -80,6 +89,7 @@ const UpdateFormState = () => {
     const addedItemTrashI = document.createElement("i");
 
     addedItemName.textContent = itemValue.itemname;
+    
     addedItemQty.textContent = itemValue.qty;
     addedItemPrice.textContent = itemValue.price;
     addedItemTotal.textContent = itemValue.total;
@@ -90,22 +100,19 @@ const UpdateFormState = () => {
     addedItemQty.className = "head2";
     addedItemPrice.className = "head3";
     addedItemTotal.className = "head4";
-
     addedItemTrashDiv.className = "head5";
     addedItemTrashSpan.className = "trashicon";
     addedItemTrashI.className = "fa-solid fa-trash";
 
     addedItemTrashSpan.appendChild(addedItemTrashI);
     addedItemTrashDiv.appendChild(addedItemTrashSpan);
-
     addedItemCard.appendChild(addedItemName);
     addedItemCard.appendChild(addedItemQty);
     addedItemCard.appendChild(addedItemPrice);
     addedItemCard.appendChild(addedItemTotal);
     addedItemCard.appendChild(addedItemTrashDiv);
-
     addedItemsArr.appendChild(addedItemCard);
-  }
+  
 };
 
 const formStateChange = () => {
@@ -128,25 +135,21 @@ const updateTotal = () => {
 // Event listeners
 
 addNewItemForm.addEventListener("click", () => {
-  if (itemName.value && quality.value && price.value && total.value) {
-    formInput.itemList.push({
-      itemname: itemName.value,
-      qty: quality.value,
+  if (itemname.value && qty.value && price.value && total.value) {
+    formInput.itemList.unshift({
+      itemname: itemname.value,
+      qty: qty.value,
       price: price.value,
       total: total.value,
     });
     console.log(formInput.itemList);
-    UpdateFormState();
+     UpdateFormState();
   } else {
     console.log("invalid");
   }
 });
 
-saveForm.addEventListener("click", () => {});
 
-cancelForm.addEventListener("click", toggleFormHandler);
-
-newInvoiceButton.addEventListener("click", toggleFormHandler);
 
 fromaddress.addEventListener("change", () => {
   val = fromaddress.value;
@@ -212,14 +215,14 @@ description.addEventListener("change", () => {
 
 // Item list
 
-itemName.addEventListener("change", () => {
-  val = itemName.value;
-  formInput["itemName"] = val;
+itemname.addEventListener("change", () => {
+  val = itemname.value;
+  formInput["itemname"] = val;
 });
 
-quality.addEventListener("change", () => {
-  val = quality.value;
-  formInput["quality"] = val;
+qty.addEventListener("change", () => {
+  val = qty.value;
+  formInput["qty"] = val;
   updateTotal();
 });
 
@@ -233,3 +236,75 @@ total.addEventListener("change", () => {
   val = total.value;
   formInput["total"] = val;
 });
+
+
+
+//new invoice card addition on svaing the form
+const addnewinvoicecard= () =>{
+  
+  const invoicelist = document.getElementsByClassName("invoicelist")[0];
+  const invoicecard=document.createElement('div');
+  
+  const invoiceid=document.createElement('p');
+  invoiceid.className="invoiceid";
+ // invoiceid.id=itemValue.id;
+  
+  const invoiceidspan=document.createElement('span');
+  invoiceidspan.className="hash";
+  invoiceidspan.textContent="#";
+  invoiceid.appendChild(invoiceidspan);
+  invoiceid.textContent="YD555";
+  
+  
+  const invoicedate=document.createElement('p');
+  invoicedate.className="invoicedate";
+  invoicedate.textContent="Due 20";
+  
+  const invoiceclient=document.createElement('p');
+  invoiceclient.className="invoiceclient";
+  invoiceclient.textContent="boxes";
+  
+  const invoiceprice=document.createElement('p');
+  invoiceprice.className="invoiceprice";
+  invoiceprice.textContent="$ 3,000";
+  
+  const invoicestatus=document.createElement('p');
+  invoicestatus.className="invoicestatus paid";
+  invoicestatus.textContent="Paid"
+  
+  const invoicearrow=document.createElement('span');
+  invoicearrow.className="left-icon";
+  const invoicearrowi=document.createElement('i');
+  invoicearrowi.className="fa-solid fa-chevron-right";
+  
+  invoicearrow.appendChild(invoicearrowi);
+  invoiceid.appendChild(invoiceidspan);
+  
+  
+  invoicecard.className="invoicecard";
+  invoicecard.appendChild(invoiceid);
+  invoicecard.appendChild(invoicedate);
+  invoicecard.appendChild(invoiceclient);
+  invoicecard.appendChild(invoiceprice);
+  invoicecard.appendChild(invoicestatus);
+  invoicecard.appendChild(invoicearrow);
+  
+  invoicelist.appendChild(invoicecard);
+  
+ 
+   toggleForm=false;
+   invoiceForm.style.display="none";
+  };
+  
+
+  
+
+
+
+saveForm.addEventListener("click",addnewinvoicecard);
+
+cancelForm.addEventListener("click", toggleFormHandler);
+
+newInvoiceButton.addEventListener("click", toggleFormHandler);
+
+

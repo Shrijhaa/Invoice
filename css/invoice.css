@@ -1,3 +1,4 @@
+
 .invoicedetails{
     background-color: var(--color-dark-background);
     color:white;
@@ -7,6 +8,7 @@
    left:250px;
     top:10px;
     font-size: 12px;
+    display: none;
 }
 .navback{
     height:70px;
@@ -122,7 +124,7 @@
 
 .invoicetable{
    
-    background-color:#252946;
+   background-color:#252946;
    padding:15px 15px;
    border-radius:10px 10px 0px 0px;
 }
