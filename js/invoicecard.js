@@ -20,7 +20,7 @@ const viewinvoicecardholder=() =>{
 
 const cardviewer = () =>{
     invoicecardholder.style.display = togglearrow ? "block" : "none";
-    invoicelists.style.display=togglearrow ? "none" : "block";;
+    invoicelists.style.display=togglearrow ? "none" : "block";
 }
 
 
@@ -30,8 +30,6 @@ viewinvoicecardholder();
 });
 
 backarrow.addEventListener("click",()=>{
-    viewinvoicelist();
+    viewinvoicelists();
 });
     
-
-
